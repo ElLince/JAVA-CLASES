@@ -1,0 +1,71 @@
+    	Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+    	System.out.print("Introducir longitud del array: ");
+//    	int l1 = sc.nextInt();
+    	int l1=3;
+    	int a1[]= new int[l1];
+    	for (int i = 0; i < a1.length; i++) {
+        	a1[i]=(int)(Math.random()*100+1);
+    	}
+    	System.out.println(Arrays.toString(a1));
+    	Arrays.sort(a1);
+    	System.out.println(Arrays.toString(a1));
+    	int a2[]=a1;
+    	System.out.println("a2 = "+Arrays.toString(a2));
+    	boolean b1;
+    	b1=Arrays.equals(a1,a2);
+    	System.out.println("a1 y a2 son iguales? "+b1);
+    	int a3[];
+    	a3 = Arrays.copyOf(a2,5);
+    	System.out.println(Arrays.toString(a3));
+    	// borrar un elemento
+    	int a5[]={0,1,2,3,4,5,6,7};
+    	int a6[]=new int[a5.length];
+    	int n1=Arrays.binarySearch(a5,2);
+    	System.out.println(n1);
+    	int a7[]={7,6,5,4,3,2,1,0};
+    	int n2=Arrays.binarySearch(a7,6);
+    	System.out.println(n2);
+    	System.arraycopy(a5 , n1+1 ,a6 ,n1 , a5.length-n1-1);
+    	System.arraycopy(a5,3,a6,2,4);
+    	System.out.println(Arrays.toString(a6));
+    	System.out.println(Arrays.toString(a5));   	 
+    	System.out.println(Arrays.toString(a6));
+
+
+    	// bidimensionales
+   	 
+    	int a4[][];
+    	a4= new int[3][3];
+    	for (int i=0; i<a4.length; i++){
+        	for (int j=0; j<a4.length; j++){
+            	a4[i][j]=i+j;
+        	}
+    	}
+    	System.out.println(Arrays.deepToString(a4));
+
+    	int a8[]={7,6,5,4,3,2,1,0};
+    	int at[]=a8;
+    	int n3=f1(a8,4);
+    	System.out.println(n3);
+    	System.arraycopy(a8 , n3+1 ,a8 ,n3 , a5.length-n3-1);
+    	System.out.println(Arrays.toString(a8));   	 
+    	a8=Arrays.copyOf(a8,a8.length-1);
+    	System.out.println(Arrays.toString(a8));   	 
+   	 
+	}
+    
+   	public static int f1(int t[], int e){
+    	int r=0;
+    	boolean encontrado=false;
+    	int i=0;
+    	while ((i<t.length) && (encontrado==false)){          	 
+        	if (t[i]==e){
+            	encontrado=true;
+            	r=i;}
+    	i=i+1;
+    	}
+	return r;
+    
+	}
+
+}
