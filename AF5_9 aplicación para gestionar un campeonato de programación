@@ -1,0 +1,53 @@
+/*
+Diseñar una aplicación para gestionar un campeonato de programación, donde se introdu-ce 
+la puntuación (enteros) obtenidos por 5 programadores, conforme van terminando su prueba. 
+La aplicación debe mostrar las puntuaciones ordenadas de los 5 participantes. En ocasiones, 
+cuando finalizan los 5 participantes anteriores, se suman al campeonato pro-gramadores de 
+exhibición, cuyos puntos se incluyen con el resto. La forma de especif
+ */
+package ar5_9;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+/**
+ *
+ * @author JAVA
+ */
+public class AR5_9 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+    int puntos[] = new int[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Puntos programador (" + (i+1) + "): ");
+            puntos[i] = sc.nextInt();
+        }
+        Arrays.sort(puntos);
+        System.out.println("Puntuacion: "+Arrays.toString(puntos));
+
+        System.out.print("Puntos del programador de exhibición: ");
+        int ppe = sc.nextInt();
+        while (ppe!=-1){
+            int pos = Arrays.binarySearch(puntos, ppe);
+            int ii; 
+            if ( pos < 0 ) {
+                ii = - pos - 1;
+            }else{
+                ii = pos;
+            }
+        int copia[] = new int[puntos.length + 1];
+        System.arraycopy(puntos, 0, copia, 0, ii);
+        System.arraycopy(puntos, ii, copia, ii +1, puntos.length - ii);
+        copia[ii] = ppe;
+        puntos = copia; 
+        System.out.print("Puntos del programador de exhibición: ");
+        ppe = sc.nextInt();
+        }
+        System.out.println("Puntuacion final: " + Arrays.toString(puntos));
+    }
+}
