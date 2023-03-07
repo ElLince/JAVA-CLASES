@@ -1,0 +1,13 @@
+        int e='a';
+        System.out.println(e);
+        char c='\'';
+        System.out.println(" El caracter c ahora es: "+c);
+        c='\"';
+        System.out.println(" c es ahora: "+c);
+        for (int codePoint=0x0000; codePoint<=0x000F; codePoint++ ){
+            String xxxx = Integer.toHexString(codePoint); // convierte un numero en su representacion hexadecimal.
+            System.out.println("\\u" + xxxx + ": " + (char)codePoint);
+        }
+            String x = Integer.toHexString(0x0040); // convierte un numero en su representacion hexadecimal.
+//            System.out.println("\\u" + x + ": " + (char)0x0040);
+            System.out.println("\\u " + x);            
