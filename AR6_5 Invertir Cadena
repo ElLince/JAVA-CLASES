@@ -1,0 +1,18 @@
+//  Invertir Cadena
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        String s1 = "El perro";
+        String s2 = "";
+        String s3 = "";
+        System.out.println(s1);
+        for (int i = s1.length() - 1; i >= 0; i--) {
+            s2 = s2 + s1.charAt(i);
+        }
+// Utlilizamos un bucle for creciente;
+        System.out.println(s2);
+        for (int i = 0; i < s1.length(); i++) {
+            s3 = s1.charAt(i) + s3;
+            System.out.println(s3);
+        }
+
+    }
+}
