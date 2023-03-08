@@ -9,3 +9,14 @@
         } while (!s9.toLowerCase().equals("fin"));
         System.out.println(s91);
    
+Scanner sc = new Scanner (System.in);
+        String s9,s91="";
+        System.out.print("Into a word: ");        
+        s9=sc.next();        
+        do {
+        s91=s91+" "+s9;
+        System.out.print("Into other word: ");
+        s9=sc.next();
+        } while (!s9.toLowerCase().equals("fin"));
+        System.out.println(s91);
+    
