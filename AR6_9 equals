@@ -1,0 +1,11 @@
+ Scanner sc = new Scanner (System.in);
+        String s9,s91="";
+        System.out.print("Intdoducir una palabra: ");        
+        s9=sc.next();        
+        do {
+        s91=s91+" "+s9;
+        System.out.print("Intdoducir otra palabra: ");
+        s9=sc.next();
+        } while (!s9.toLowerCase().equals("fin"));
+        System.out.println(s91);
+   
