@@ -1,0 +1,24 @@
+        Scanner sc = new Scanner(System.in);
+        String nombre, sinVocales = "";
+        char c;
+        System.out.print("Escriba su nombre completo: ");
+        nombre = sc.nextLine();
+        for (int i = 0; i < nombre.length(); i++) { //recorremos la tabla 
+            c = nombre.charAt(i);
+            if (!esVocal(c)) {
+                sinVocales = sinVocales + c;
+            }
+        }
+        System.out.println(sinVocales);
+    }
+
+    static boolean esVocal(char c) {
+        boolean result; //resultado de la comprobación 
+        String vocales = "aeiouáéíóúü"; //cadena con todas las vocales posibles en minúsculas 
+        c = Character.toLowerCase(c); //convertimos c en minúsculas 
+        if (vocales.indexOf(c) == -1) { //buscamos c en la cadena vocales 
+            result = false; //si no se encuentra es que no es una vocal 
+        } else {
+            result = true; //en caso contrario: es una vocal 
+        }
+        return result;
