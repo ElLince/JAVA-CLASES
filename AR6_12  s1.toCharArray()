@@ -1,0 +1,29 @@
+Un anagrama es una palabra que resulta del cambio del orden de los caracteres de otra. 
+* Ejemplos de anagramas para la palabra roma son: amor,ramo o mora. Construir un programa 
+* que solicite al usuario dos palabras e indique si son anagramas una de otra
+     */
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s1,s2;
+        System.out.print("Escribir una palabra: ");
+        s1 = sc.nextLine();
+        s1 = s1.toLowerCase();
+        System.out.print("Escribir otra: ");
+        s2 = sc.nextLine();
+        s2 = s2.toLowerCase();
+        if (s1.length()!=s2.length()){
+            System.out.println("No son anagramas");
+        }else{
+            char ac1[]=s1.toCharArray();
+            char ac2[]=s2.toCharArray();                    
+            Arrays.sort(ac1);
+            Arrays.sort(ac2);            
+            if (Arrays.equals(ac1,ac2)){
+                System.out.println("Son anagramas");
+            }else{
+                System.out.println("No son anagramas");
+            }
+        }
+    }
+}
