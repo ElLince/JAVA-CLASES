@@ -1,0 +1,21 @@
+        String s1="if /* codi */";
+        System.out.println(s1);
+        System.out.println("Con comentarios eliminados");
+        char a1[]=s1.toCharArray();
+        String s2="";
+        boolean copia=true;
+        int contador=0;
+        for (int i = 0; i<a1.length-2; i++){
+            if (a1[i]=='/' && a1[i+1]=='*'){  copia=false;}
+            if (a1[i]=='*' && a1[i+1]=='/'){  
+                copia=true;
+                i=i+2;
+            }
+            System.out.println(i+" "+a1[i]+" "+a1[i+1]);
+            if (copia){s2=s2+a1[i];}
+        }
+        System.out.println(s2);
+        }
+ }
+
+
