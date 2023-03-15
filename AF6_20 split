@@ -1,0 +1,9 @@
+        Scanner sc = new Scanner(System.in);
+        String s = "el Perro de San Roque no tiene rabo";
+        s=s.toLowerCase();
+        System.out.println(s);
+        String[] palabras= s.split(" ");
+        Arrays.sort(palabras);
+
+    }
+}
